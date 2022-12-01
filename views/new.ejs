@@ -1,0 +1,33 @@
+<%- include('./partials/header.ejs') -%>
+    <script src="https://cdn.tiny.cloud/1/k6qesxe7kblzq1rxgkevr69szp260d7t3i2ablsxogsl1osg/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>tinymce.init({ selector: 'textarea' });</script>
+    <title>New blog post</title>
+</head>
+
+<body>
+
+    <div class="container reply-form">
+        <h1 class="mb-4 text-black">New blog post</h1>
+
+        <form action="/blogs" method="POST" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-10 mb-3 form-group">
+                    <input type="text" class="form-control" placeholder="Title" name="title" required>
+                </div>
+                <div class="col-md-10 mb-3 form-group">
+                    <input type="text" class="form-control" placeholder="Author Name" name="author" required>
+                </div>
+                <div class="col-md-10 mb-3 form-group">
+                    <textarea name="description" placeholder="Main Description" class="form-control" rows="20" cols="50"></textarea>
+                </div>
+                
+
+                <div class="col-md-10 mb-3 form-group">
+                    <a href="/" class="btn btn-warning">Cancel</a>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+           
+        </form>
+    </div>
+
+<%- include('./partials/footer.ejs') -%>
